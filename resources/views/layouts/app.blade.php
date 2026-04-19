@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'Naše Svatba' }}</title>
+        <title>{{ $title ?? 'Svatba ušáci' }}</title>
 
         <!-- Google Fonts pro lepší čitelnost a styl -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
