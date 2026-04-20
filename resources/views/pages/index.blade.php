@@ -74,7 +74,7 @@ new #[Layout('layouts.app')] class extends Component
     <!-- Hero Sekce -->
     <section id="uvod" class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="/hero-beer.jpg" alt="Svatba" class="w-full h-full object-cover brightness-[0.75]">
+            <img src="/hero-beer.jpg?v={{ file_exists(public_path('hero-beer.jpg')) ? filemtime(public_path('hero-beer.jpg')) : time() }}" alt="Svatba" class="w-full h-full object-cover brightness-[0.75]">
             <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-transparent to-transparent"></div>
         </div>
 
@@ -185,7 +185,7 @@ new #[Layout('layouts.app')] class extends Component
             <div class="absolute top-0 right-0 w-32 h-32 bg-amber-400 opacity-10 rounded-full -mr-16 -mt-16"></div>
             <h2 class="text-4xl font-black mb-8 uppercase italic">Dresscode</h2>
             <p class="text-xl leading-relaxed mb-10 text-emerald-50">
-                Svatba bude laděná do <span class="text-amber-400 font-bold">pivních barev</span>. Pokud hledáte inspiraci, doporučujeme formální módní kousky v odstínech pivní palety:
+                Máme rádi pivo a ještě radši na něj chodíme společně. Svatbu jsme se proto rozhodli ladit do <span class="text-amber-400 font-bold">pivních barev</span>. Pokud hledáte inspiraci, doporučujeme formální módní kousky v odstínech pivní palety:
             </p>
 
             <div class="flex flex-wrap gap-6 mb-10">
@@ -298,22 +298,22 @@ new #[Layout('layouts.app')] class extends Component
             <h2 class="text-4xl md:text-5xl text-center mb-16 text-emerald-900 font-extrabold uppercase tracking-tighter">Momentky z našeho života</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo1.jpg" alt="Foto 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="/photos/photo1.jpg?v={{ file_exists(public_path('photos/photo1.jpg')) ? filemtime(public_path('photos/photo1.jpg')) : time() }}" alt="Foto 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo2.jpg" alt="Foto 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="/photos/photo2.jpg?v={{ file_exists(public_path('photos/photo2.jpg')) ? filemtime(public_path('photos/photo2.jpg')) : time() }}" alt="Foto 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo3.jpg" alt="Foto 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="/photos/photo3.jpg?v={{ file_exists(public_path('photos/photo3.jpg')) ? filemtime(public_path('photos/photo3.jpg')) : time() }}" alt="Foto 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo4.jpg" alt="Foto 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="/photos/photo4.jpg?v={{ file_exists(public_path('photos/photo4.jpg')) ? filemtime(public_path('photos/photo4.jpg')) : time() }}" alt="Foto 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo5.jpg" alt="Foto 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="/photos/photo5.jpg?v={{ file_exists(public_path('photos/photo5.jpg')) ? filemtime(public_path('photos/photo5.jpg')) : time() }}" alt="Foto 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo6.jpg" alt="Foto 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="/photos/photo6.jpg?v={{ file_exists(public_path('photos/photo6.jpg')) ? filemtime(public_path('photos/photo6.jpg')) : time() }}" alt="Foto 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
             </div>
             <p class="text-center text-stone-400 text-xs mt-6 italic">Brzy přibudou i fotky ze svatby...</p>
