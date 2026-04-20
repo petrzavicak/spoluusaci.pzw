@@ -255,7 +255,7 @@ new #[Layout('layouts.app')] class extends Component
                             <p class="text-sm">Vlakem do Olomouce, poté autobusem do Dolan. Pokud potřebujete pomoci s dopravou z Olomouce do Dolan, kontaktujte s předstihem ženicha, který se pokusí dopravu zařídit.</p>
                         </div>
                         <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 italic">
-                            <h4 class="font-bold text-amber-800 uppercase text-[10px] mb-1">Přesun na hostinu</h4>
+                            <h4 class="font-bold text-amber-800 uppercase text-[10px] mb-1">Přesun na hostinu (cca 5 km)</h4>
                             <p class="text-sm text-amber-900 font-medium">Do Bohuňovic pojedeme společně v koloně. Pokud nemáte vlastní auto, sveze Vás někdo ze svatebčanů – dejte vědět ženichovi.</p>
                         </div>
                     </div>
