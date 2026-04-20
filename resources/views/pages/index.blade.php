@@ -63,10 +63,10 @@ new #[Layout('layouts.app')] class extends Component
     <!-- Moderní Plovoucí Navigace (Styl z verze 2) -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-md">
         <div class="bg-white/80 backdrop-blur-lg border border-emerald-900/10 shadow-lg rounded-full px-6 py-3 flex justify-around text-[9px] md:text-xs font-bold uppercase tracking-tighter md:tracking-wider text-emerald-900">
-            <a href="#uvod" class="hover:text-emerald-600 transition">Úvod</a>
             <a href="#info" class="hover:text-emerald-600 transition px-1">Info</a>
             <a href="#foto" class="hover:text-emerald-600 transition px-1">Foto</a>
             <a href="#stravovani" class="hover:text-emerald-600 transition px-1">Stravování</a>
+            <a href="#dary" class="hover:text-emerald-600 transition px-1">Dary</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
         </div>
     </nav>
@@ -216,33 +216,6 @@ new #[Layout('layouts.app')] class extends Component
             </p>
         </section>
 
-        <!-- Sekce Děti -->
-        <section id="deti" class="scroll-mt-24 bg-white p-10 md:p-16 rounded-[3rem] shadow-lg border-t-8 border-amber-500/30">
-            <div class="flex flex-col md:flex-row items-center gap-10">
-                <div class="text-7xl">🧸</div>
-                <div class="flex-1">
-                    <h2 class="text-4xl font-black mb-6 text-emerald-900 uppercase italic">Děti na svatbě</h2>
-                    <p class="text-lg text-stone-600 leading-relaxed mb-6">
-                        Naše svatba bude <span class="text-emerald-700 italic whitespace-nowrap">baby friendly</span>. Chceme, aby si den užili i ti nejmenší, proto bude v sále zajištěn dětský koutek.
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
-                            <h4 class="font-bold text-emerald-800 uppercase text-xs mb-3 flex items-center gap-2">
-                                <span>🎨</span> Dětský koutek
-                            </h4>
-                            <p class="text-sm text-stone-500">K dispozici bude podložka na hraní, hračky a knížky pro děti.</p>
-                        </div>
-                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
-                            <h4 class="font-bold text-emerald-800 uppercase text-xs mb-3 flex items-center gap-2">
-                                <span>🍼</span> Zázemí pro rodiče
-                            </h4>
-                            <p class="text-sm text-stone-500">Pro vaše pohodlí je v místě konání k dispozici také přebalovací pult.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Doprava a Ubytování -->
         <section id="doprava" class="scroll-mt-24 space-y-12">
             <h2 class="text-4xl md:text-5xl text-center mb-16 text-emerald-900 font-extrabold uppercase tracking-tighter">Doprava & Ubytování</h2>
@@ -288,6 +261,33 @@ new #[Layout('layouts.app')] class extends Component
                     <p class="text-stone-300 leading-relaxed">
                         Nebojte se pořádně oslavovat. Večer i v noci budou k dispozici řidiči, kteří vás odvezou do Olomouce a okolí. Kontakt na ně bude k dispozici přímo na místě.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekce Děti -->
+        <section id="deti" class="scroll-mt-24 bg-white p-10 md:p-16 rounded-[3rem] shadow-lg border-t-8 border-amber-500/30">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="text-7xl">🧸</div>
+                <div class="flex-1">
+                    <h2 class="text-4xl font-black mb-6 text-emerald-900 uppercase italic">Děti na svatbě</h2>
+                    <p class="text-lg text-stone-600 leading-relaxed mb-6">
+                        Naše svatba bude <span class="text-emerald-700 italic whitespace-nowrap">baby friendly</span>. Chceme, aby si den užili i ti nejmenší, proto bude v sále zajištěn dětský koutek.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
+                            <h4 class="font-bold text-emerald-800 uppercase text-xs mb-3 flex items-center gap-2">
+                                <span>🎨</span> Dětský koutek
+                            </h4>
+                            <p class="text-sm text-stone-500">K dispozici bude podložka na hraní, hračky a knížky pro děti.</p>
+                        </div>
+                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
+                            <h4 class="font-bold text-emerald-800 uppercase text-xs mb-3 flex items-center gap-2">
+                                <span>🍼</span> Zázemí pro rodiče
+                            </h4>
+                            <p class="text-sm text-stone-500">Pro vaše pohodlí je v místě konání k dispozici také přebalovací pult.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
