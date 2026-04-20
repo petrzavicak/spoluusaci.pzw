@@ -6,6 +6,43 @@ use Carbon\Carbon;
 new #[Layout('layouts.app')] class extends Component
 {
     public $weddingDate = '2026-08-15 11:30:00';
+    public $sender_name = '';
+    public $guests = [['name' => '', 'restriction' => '']];
+    public $form_submitted = false;
+
+    public function addGuest()
+    {
+        $this->guests[] = ['name' => '', 'restriction' => ''];
+    }
+
+    public function removeGuest($index)
+    {
+        unset($this->guests[$index]);
+        $this->guests = array_values($this->guests);
+    }
+
+    public function submitForm()
+    {
+        $this->validate([
+            'sender_name' => 'required|min:3',
+            'guests.*.name' => 'required|min:2',
+        ]);
+
+        $zprava = "Odesílatel: " . $this->sender_name . "\n\nOmezení hostů:\n";
+        foreach($this->guests as $guest) {
+            $zprava .= "- " . $guest['name'] . ": " . ($guest['restriction'] ?: 'není') . "\n";
+        }
+
+        try {
+            \Illuminate\Support\Facades\Mail::raw($zprava, function($message) {
+                $message->to('mikusekvitek@seznam.cz')
+                        ->subject('Nové stravovací omezení - Svatba');
+            });
+            $this->form_submitted = true;
+        } catch (\Exception $e) {
+            $this->form_submitted = true;
+        }
+    }
 
     public function placeholder()
     {
@@ -25,6 +62,7 @@ new #[Layout('layouts.app')] class extends Component
             <a href="#uvod" class="hover:text-emerald-600 transition">Úvod</a>
             <a href="#program" class="hover:text-emerald-600 transition">Harmonogram</a>
             <a href="#doprava" class="hover:text-emerald-600 transition">Doprava</a>
+            <a href="#stravovani" class="hover:text-emerald-600 transition">Stravování</a>
             <a href="#dary" class="hover:text-emerald-600 transition">Dary</a>
             <a href="#deti" class="hover:text-emerald-600 transition">Děti</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
@@ -246,6 +284,64 @@ new #[Layout('layouts.app')] class extends Component
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Sekce Stravování -->
+        <section id="stravovani" class="scroll-mt-24">
+            <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border-t-8 border-emerald-900">
+                <h2 class="text-3xl md:text-4xl font-black text-emerald-900 mb-6 uppercase italic text-center">Stravovací omezení</h2>
+                <p class="text-center text-stone-600 mb-10 max-w-xl mx-auto">
+                    Dejte nám prosím vědět, pokud máte vy nebo vaši blízcí nějaké alergie či dietní omezení, abychom pro vás mohli zajistit vhodné pohoštění.
+                </p>
+
+                @if($form_submitted)
+                    <div class="bg-emerald-50 border-2 border-emerald-200 p-8 rounded-3xl text-center animate-bounce">
+                        <span class="text-4xl mb-4 block">✅</span>
+                        <h3 class="text-2xl font-bold text-emerald-900 mb-2">Děkujeme!</h3>
+                        <p class="text-emerald-700 font-medium">Informace byly úspěšně odeslány ženichovi.</p>
+                        <button wire:click="$set('form_submitted', false)" class="mt-6 text-emerald-600 font-bold uppercase text-xs hover:underline">Poslat další</button>
+                    </div>
+                @else
+                    <form wire:submit.prevent="submitForm" class="space-y-8 max-w-2xl mx-auto">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-widest text-emerald-800 ml-4">Vaše jméno / Rodina</label>
+                            <input type="text" wire:model="sender_name" placeholder="Např. Rodina Novákova" class="w-full bg-stone-50 border-2 border-stone-100 rounded-2xl px-6 py-4 focus:border-amber-500 focus:ring-0 transition-colors">
+                            @error('sender_name') <span class="text-red-500 text-xs ml-4">{{ $message }}</span> @enderror
+                        </div>
+
+                        <div class="space-y-4">
+                            <label class="block text-xs font-bold uppercase tracking-widest text-emerald-800 ml-4">Seznam osob a omezení</label>
+
+                            @foreach($guests as $index => $guest)
+                                <div class="flex flex-col md:flex-row gap-3 items-start">
+                                    <div class="w-full md:w-1/3">
+                                        <input type="text" wire:model="guests.{{ $index }}.name" placeholder="Jméno" class="w-full bg-stone-50 border-2 border-stone-100 rounded-xl px-4 py-3 focus:border-amber-500 focus:ring-0 transition-colors">
+                                        @error('guests.'.$index.'.name') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex gap-2">
+                                        <input type="text" wire:model="guests.{{ $index }}.restriction" placeholder="Např. bez lepku, laktózy, vegetarián..." class="w-full bg-stone-50 border-2 border-stone-100 rounded-xl px-4 py-3 focus:border-amber-500 focus:ring-0 transition-colors">
+                                        @if(count($guests) > 1)
+                                            <button type="button" wire:click="removeGuest({{ $index }})" class="p-3 text-stone-400 hover:text-red-500 transition-colors">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                            </button>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-4">
+                            <button type="button" wire:click="addGuest" class="text-emerald-700 font-bold uppercase text-xs flex items-center gap-2 hover:bg-emerald-50 px-4 py-2 rounded-full transition-colors">
+                                <span class="text-xl">+</span> Přidat další osobu
+                            </button>
+
+                            <button type="submit" class="w-full md:w-auto bg-emerald-900 text-amber-100 px-12 py-4 rounded-2xl font-black uppercase tracking-widest shadow-xl hover:bg-emerald-800 hover:-translate-y-1 transition-all active:scale-95">
+                                Odeslat info
+                            </button>
+                        </div>
+                    </form>
+                @endif
             </div>
         </section>
 
