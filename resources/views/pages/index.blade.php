@@ -9,6 +9,7 @@ new #[Layout('layouts.app')] class extends Component
     public $sender_name = '';
     public $guests = [['name' => '', 'restriction' => '']];
     public $form_submitted = false;
+    public $mail_error = false;
 
     public function addGuest()
     {
@@ -28,6 +29,8 @@ new #[Layout('layouts.app')] class extends Component
             'guests.*.name' => 'required|min:2',
         ]);
 
+        $this->mail_error = false;
+
         $zprava = "Odesílatel: " . $this->sender_name . "\n\nOmezení hostů:\n";
         foreach($this->guests as $guest) {
             $zprava .= "- " . $guest['name'] . ": " . ($guest['restriction'] ?: 'není') . "\n";
@@ -40,7 +43,8 @@ new #[Layout('layouts.app')] class extends Component
             });
             $this->form_submitted = true;
         } catch (\Exception $e) {
-            $this->form_submitted = true;
+            \Illuminate\Support\Facades\Log::error('Chyba při odesílání svatebního e-mailu: ' . $e->getMessage());
+            $this->mail_error = true;
         }
     }
 
@@ -304,6 +308,12 @@ new #[Layout('layouts.app')] class extends Component
                     </div>
                 @else
                     <form wire:submit.prevent="submitForm" class="space-y-8 max-w-2xl mx-auto">
+                        @if($mail_error)
+                            <div class="bg-red-50 border-2 border-red-200 p-6 rounded-2xl text-center mb-6">
+                                <p class="text-red-700 font-bold">Omlouváme se, ale odeslání e-mailu selhalo.</p>
+                                <p class="text-red-600 text-sm mt-1">Prosím, zkuste to znovu později nebo kontaktujte přímo ženicha.</p>
+                            </div>
+                        @endif
                         <div class="space-y-2">
                             <label class="block text-xs font-bold uppercase tracking-widest text-emerald-800 ml-4">Vaše jméno / Rodina</label>
                             <input type="text" wire:model="sender_name" placeholder="Např. Rodina Novákova" class="w-full bg-stone-50 border-2 border-stone-100 rounded-2xl px-6 py-4 focus:border-amber-500 focus:ring-0 transition-colors">
