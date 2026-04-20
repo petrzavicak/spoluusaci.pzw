@@ -38,24 +38,25 @@ new #[Layout('layouts.app')] class extends Component
             <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-transparent to-transparent"></div>
         </div>
 
-        <div class="relative z-10 text-center px-4 -mt-24 md:-mt-32">
+        <div class="relative z-10 text-center px-4 -mt-32 md:-mt-40">
             <p class="text-white text-xl md:text-2xl uppercase tracking-[0.4em] font-light mb-4 drop-shadow-lg">Svatba</p>
-            <h1 class="text-5xl md:text-8xl mb-8 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)] font-montserrat font-extrabold tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
+            <h1 class="text-5xl md:text-8xl mb-12 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)] font-playfair font-extrabold tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
                 <span>Ester</span>
                 <span class="relative inline-block">
-                    <span class="text-amber-400 not-italic font-cormorant italic tracking-normal">&</span>
-                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-amber-500/60 rounded-full shadow-sm"></span>
+                    <span class="text-amber-500/80 not-italic font-cormorant italic tracking-normal">&</span>
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-amber-500/50 rounded-full shadow-sm"></span>
                 </span>
                 <span>Vítek</span>
             </h1>
-            <div class="space-y-1">
-                <p class="text-xl md:text-3xl text-white font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">15. srpna 2026</p>
-                <p class="text-base md:text-xl text-amber-100 font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,1)] italic tracking-wide">Dolany u Olomouce</p>
-            </div>
         </div>
 
-        <!-- Odpočítávadlo (Posunuto úplně dolů) -->
-        <div class="absolute bottom-6 left-0 w-full z-10 px-4">
+        <!-- Odpočítávadlo a Info (Posunuto úplně dolů) -->
+        <div class="absolute bottom-10 left-0 w-full z-10 px-4 space-y-8">
+            <div class="text-center space-y-2">
+                <p class="text-2xl md:text-4xl text-white font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,1)] font-playfair">15. srpna 2026</p>
+                <p class="text-lg md:text-2xl text-amber-100 font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,1)] italic tracking-wide">Dolany u Olomouce</p>
+            </div>
+
             <div x-data="{
                 d: '00', h: '00', m: '00',
                 init() {
@@ -73,16 +74,16 @@ new #[Layout('layouts.app')] class extends Component
                 }
             }" class="flex justify-center gap-3 text-white max-w-sm mx-auto">
                 <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[75px] md:min-w-[85px] shadow-2xl">
-                    <span class="block text-3xl md:text-4xl font-black text-amber-400" x-text="d">00</span>
-                    <span class="text-[9px] uppercase font-bold tracking-widest opacity-80">Dní</span>
+                    <span class="block text-3xl md:text-4xl font-black text-amber-500/80" x-text="d">00</span>
+                    <span class="text-[9px] uppercase font-bold tracking-widest opacity-80 text-white/90">Dní</span>
                 </div>
                 <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[75px] md:min-w-[85px] shadow-2xl">
-                    <span class="block text-3xl md:text-4xl font-black text-amber-400" x-text="h">00</span>
-                    <span class="text-[9px] uppercase font-bold tracking-widest opacity-80">Hodin</span>
+                    <span class="block text-3xl md:text-4xl font-black text-amber-500/80" x-text="h">00</span>
+                    <span class="text-[9px] uppercase font-bold tracking-widest opacity-80 text-white/90">Hodin</span>
                 </div>
                 <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[75px] md:min-w-[85px] shadow-2xl">
-                    <span class="block text-3xl md:text-4xl font-black text-amber-400" x-text="m">00</span>
-                    <span class="text-[9px] uppercase font-bold tracking-widest opacity-80">Minut</span>
+                    <span class="block text-3xl md:text-4xl font-black text-amber-500/80" x-text="m">00</span>
+                    <span class="text-[9px] uppercase font-bold tracking-widest opacity-80 text-white/90">Minut</span>
                 </div>
             </div>
         </div>
@@ -102,7 +103,7 @@ new #[Layout('layouts.app')] class extends Component
                          <div class="absolute -right-4 -top-4 text-7xl text-emerald-50/50 font-extrabold pointer-events-none z-0">11:30</div>
                          <div class="relative z-10">
                             <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">Svatební obřad</h3>
-                            <p class="text-lg font-bold text-amber-700 mb-4 tracking-wide">11:30 | Kostel sv. Matouše, Dolany</p>
+                            <p class="text-lg font-bold text-amber-600/80 mb-4 tracking-wide">11:30 | Kostel sv. Matouše, Dolany</p>
                             <div class="rounded-2xl overflow-hidden shadow-inner border border-stone-200">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2583.3731778201955!2d17.32173271246656!3d49.6472674713309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47124bdeafcaf7f7%3A0xd97c067f768d8edc!2sKostel%20sv.%20Matou%C5%A1e!5e0!3m2!1scs!2scz!4v1776713108103!5m2!1scs!2scz" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
@@ -116,14 +117,15 @@ new #[Layout('layouts.app')] class extends Component
                          <div class="absolute -right-4 -top-4 text-7xl text-amber-50/50 font-extrabold pointer-events-none z-0">13:30</div>
                          <div class="relative z-10">
                             <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">Svatební hostina</h3>
-                            <div class="space-y-4 mb-6">
+                            <div class="space-y-6 mb-6">
                                 <div>
-                                    <p class="font-bold text-amber-700 tracking-wide uppercase text-xs mb-1">Svatební oběd (Rodina) <span class="normal-case italic font-normal text-stone-500 ml-1">— čas je orientační</span></p>
-                                    <p class="text-lg font-bold">13:30 | Kulturní dům, Bohuňovice</p>
+                                    <h4 class="font-bold text-amber-600/80 tracking-wide uppercase text-sm mb-1">Svatební oběd (Rodina)</h4>
+                                    <p class="text-lg font-bold text-emerald-900 leading-tight">13:30 | Kulturní dům, Bohuňovice</p>
+                                    <p class="text-xs italic text-stone-500 mt-1">— čas je pouze orientační</p>
                                 </div>
                                 <div>
-                                    <p class="font-bold text-emerald-700 tracking-wide uppercase text-xs mb-1">Svatební raut & Párty (Všichni)</p>
-                                    <p class="text-lg font-bold text-emerald-900">16:30 | Bohuňovice</p>
+                                    <h4 class="font-bold text-emerald-700 tracking-wide uppercase text-sm mb-1">Svatební raut & Párty (Všichni)</h4>
+                                    <p class="text-lg font-bold text-emerald-900 leading-tight">16:30 | Kulturní dům, Bohuňovice</p>
                                 </div>
                             </div>
                             <div class="rounded-2xl overflow-hidden shadow-inner border border-stone-200">
@@ -190,7 +192,7 @@ new #[Layout('layouts.app')] class extends Component
                         </div>
                         <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 italic">
                             <h4 class="font-bold text-amber-800 uppercase text-[10px] mb-1">Přesun na hostinu</h4>
-                            <p class="text-sm text-amber-900 font-medium">Do Bohuňovic pojedeme společně v koloně. Kdo nemáte vlastní auto, sveze Vás někdo ze svatebčanů – dejte vědět ženichovi.</p>
+                            <p class="text-sm text-amber-900 font-medium">Do Bohuňovic pojedeme společně v koloně. Pokud nemáte vlastní auto, sveze Vás někdo ze svatebčanů – dejte vědět ženichovi.</p>
                         </div>
                     </div>
                 </div>
@@ -201,9 +203,9 @@ new #[Layout('layouts.app')] class extends Component
                     <div class="space-y-6 text-stone-600">
                         <p class="text-sm">Ubytování je k dispozici zdarma (či za dobrovolný příspěvek) ve vybavených pokojích farního Domu v Dolanech (Komunita Blahoslavenství).</p>
                         <p class="text-sm font-bold bg-stone-50 p-4 rounded-xl border border-stone-200">
-                            Kapacita je omezená (systém "kdo dřív přijde,..."), dejte prosím vědět ženichovi co nejdříve kvůli rezervaci.
+                            Kapacita je omezená (systém "kdo dřív přijde,..."), kvůli rezervaci se nám prosím nahlaste do 31. 5.
                         </p>
-                        <p class="text-sm leading-relaxed">Po vyčerpání kapacity bude případně domluvena možnost přespání ve vlastním stanu na zahradě fary v Dolanech, případně lze po vlastní ose v hotelech/airbnb v Olomouci.</p>
+                        <p class="text-sm leading-relaxed">V případě vyčerpání kapacity se domluvíme individuálně na dalších možnostech, případně lze po vlastní ose využít nabídky hotelů/airbnb v Olomouci.</p>
                     </div>
                 </div>
             </div>
@@ -212,7 +214,7 @@ new #[Layout('layouts.app')] class extends Component
             <div class="bg-stone-900 text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center gap-8 border-b-4 border-amber-500/50">
                 <div class="text-5xl">🚗</div>
                 <div>
-                    <h3 class="text-xl font-black mb-2 uppercase italic text-amber-400">Večerní odvoz zajištěn</h3>
+                    <h3 class="text-xl font-black mb-2 uppercase italic text-amber-600/80">Večerní odvoz zajištěn</h3>
                     <p class="text-stone-300 leading-relaxed">
                         Nebojte se pořádně oslavovat. Večer i v noci budou k dispozici řidiči, kteří vás odvezou do Olomouce a okolí. Kontakt na ně bude k dispozici přímo na místě.
                     </p>
