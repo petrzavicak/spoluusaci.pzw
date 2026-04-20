@@ -38,7 +38,7 @@ new #[Layout('layouts.app')] class extends Component
             <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-transparent to-transparent"></div>
         </div>
 
-        <div class="relative z-10 text-center px-4 -mt-32 md:-mt-40">
+        <div class="relative z-10 text-center px-4 -mt-40 md:-mt-48">
             <p class="text-white text-xl md:text-2xl uppercase tracking-[0.4em] font-light mb-4 drop-shadow-lg">Svatba</p>
             <h1 class="text-5xl md:text-8xl mb-12 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)] font-playfair font-extrabold tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
                 <span>Ester</span>
@@ -203,9 +203,9 @@ new #[Layout('layouts.app')] class extends Component
                     <div class="space-y-6 text-stone-600">
                         <p class="text-sm">Ubytování je k dispozici zdarma (či za dobrovolný příspěvek) ve vybavených pokojích farního Domu v Dolanech (Komunita Blahoslavenství).</p>
                         <p class="text-sm font-bold bg-stone-50 p-4 rounded-xl border border-stone-200">
-                            Kapacita je omezená (systém "kdo dřív přijde,..."), kvůli rezervaci se nám prosím nahlaste do 31. 5.
+                            Kapacita je omezená, kvůli rezervaci se nám prosím nahlaste do 31. 5.
                         </p>
-                        <p class="text-sm leading-relaxed">V případě vyčerpání kapacity se domluvíme individuálně na dalších možnostech, případně lze po vlastní ose využít nabídky hotelů/airbnb v Olomouci.</p>
+                        <p class="text-sm leading-relaxed">Jde o systém "kdo dřív přijde,...", v případě vyčerpání kapacity se domluvíme individuálně, případně lze po vlastní ose využít hotely/airbinb v Olomouci.</p>
                     </div>
                 </div>
             </div>
@@ -229,7 +229,7 @@ new #[Layout('layouts.app')] class extends Component
                 <div class="flex-1">
                     <h2 class="text-4xl font-black mb-6 text-emerald-900 uppercase italic">Děti na svatbě</h2>
                     <p class="text-lg text-stone-600 leading-relaxed mb-6">
-                        Naše svatba bude <span class="text-emerald-700 font-bold italic">baby friendly</span>. Chceme, aby si den užili i ti nejmenší, proto bude v sále zajištěn dětský koutek.
+                        Naše svatba bude <span class="text-emerald-700 italic whitespace-nowrap">baby friendly</span>. Chceme, aby si den užili i ti nejmenší, proto bude v sále zajištěn dětský koutek.
                     </p>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
