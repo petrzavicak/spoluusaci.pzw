@@ -64,9 +64,9 @@ new #[Layout('layouts.app')] class extends Component
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-md">
         <div class="bg-white/80 backdrop-blur-lg border border-emerald-900/10 shadow-lg rounded-full px-6 py-3 flex justify-around text-[9px] md:text-xs font-bold uppercase tracking-tighter md:tracking-wider text-emerald-900">
             <a href="#info" class="hover:text-emerald-600 transition px-1">Info</a>
-            <a href="#foto" class="hover:text-emerald-600 transition px-1">Foto</a>
             <a href="#stravovani" class="hover:text-emerald-600 transition px-1">Stravování</a>
             <a href="#dary" class="hover:text-emerald-600 transition px-1">Dary</a>
+            <a href="#foto" class="hover:text-emerald-600 transition px-1">Foto</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
         </div>
     </nav>
@@ -293,31 +293,7 @@ new #[Layout('layouts.app')] class extends Component
         </section>
 
 
-        <!-- Sekce Fotogalerie -->
-        <section id="foto" class="scroll-mt-24">
-            <h2 class="text-4xl md:text-5xl text-center mb-16 text-emerald-900 font-extrabold uppercase tracking-tighter">Momentky z našeho života</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo1.jpg?v={{ file_exists(public_path('photos/photo1.jpg')) ? filemtime(public_path('photos/photo1.jpg')) : time() }}" alt="Foto 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo2.jpg?v={{ file_exists(public_path('photos/photo2.jpg')) ? filemtime(public_path('photos/photo2.jpg')) : time() }}" alt="Foto 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo3.jpg?v={{ file_exists(public_path('photos/photo3.jpg')) ? filemtime(public_path('photos/photo3.jpg')) : time() }}" alt="Foto 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo4.jpg?v={{ file_exists(public_path('photos/photo4.jpg')) ? filemtime(public_path('photos/photo4.jpg')) : time() }}" alt="Foto 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo5.jpg?v={{ file_exists(public_path('photos/photo5.jpg')) ? filemtime(public_path('photos/photo5.jpg')) : time() }}" alt="Foto 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
-                    <img src="/photos/photo6.jpg?v={{ file_exists(public_path('photos/photo6.jpg')) ? filemtime(public_path('photos/photo6.jpg')) : time() }}" alt="Foto 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                </div>
-            </div>
-            <p class="text-center text-stone-400 text-xs mt-6 italic">Brzy přibudou i fotky ze svatby...</p>
-        </section>
+        </div> <!-- Konec sekce INFO -->
 
         <!-- Sekce Stravování -->
         <section id="stravovani" class="scroll-mt-24">
@@ -384,7 +360,7 @@ new #[Layout('layouts.app')] class extends Component
         </section>
 
         <!-- Sekce Dary -->
-        <section id="dary" class="text-center bg-white p-12 md:p-20 rounded-[3rem] border-2 border-dashed border-emerald-200 shadow-inner">
+        <section id="dary" class="text-center bg-white p-12 md:p-20 rounded-[3rem] border-2 border-dashed border-emerald-200 shadow-inner scroll-mt-24">
             <h2 class="text-4xl mb-10 text-emerald-900 font-extrabold uppercase">Svatební dary</h2>
             <div class="max-w-2xl mx-auto space-y-8">
                 <p class="text-xl leading-relaxed italic text-stone-700">
@@ -400,7 +376,31 @@ new #[Layout('layouts.app')] class extends Component
             </div>
         </section>
 
-        </div> <!-- Konec sekce INFO -->
+        <!-- Sekce Fotogalerie -->
+        <section id="foto" class="scroll-mt-24">
+            <h2 class="text-4xl md:text-5xl text-center mb-16 text-emerald-900 font-extrabold uppercase tracking-tighter">Momentky z našeho života</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo1.jpg?v={{ file_exists(public_path('photos/photo1.jpg')) ? filemtime(public_path('photos/photo1.jpg')) : time() }}" alt="Foto 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo2.jpg?v={{ file_exists(public_path('photos/photo2.jpg')) ? filemtime(public_path('photos/photo2.jpg')) : time() }}" alt="Foto 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo3.jpg?v={{ file_exists(public_path('photos/photo3.jpg')) ? filemtime(public_path('photos/photo3.jpg')) : time() }}" alt="Foto 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo4.jpg?v={{ file_exists(public_path('photos/photo4.jpg')) ? filemtime(public_path('photos/photo4.jpg')) : time() }}" alt="Foto 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo5.jpg?v={{ file_exists(public_path('photos/photo5.jpg')) ? filemtime(public_path('photos/photo5.jpg')) : time() }}" alt="Foto 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo6.jpg?v={{ file_exists(public_path('photos/photo6.jpg')) ? filemtime(public_path('photos/photo6.jpg')) : time() }}" alt="Foto 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+            </div>
+            <p class="text-center text-stone-400 text-xs mt-6 italic">Brzy přibudou i fotky ze svatby...</p>
+        </section>
 
         <!-- Kontakt & Potvrzení účasti -->
         <section id="kontakt" class="scroll-mt-24 text-center">
