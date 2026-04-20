@@ -64,10 +64,9 @@ new #[Layout('layouts.app')] class extends Component
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-md">
         <div class="bg-white/80 backdrop-blur-lg border border-emerald-900/10 shadow-lg rounded-full px-6 py-3 flex justify-around text-[9px] md:text-xs font-bold uppercase tracking-tighter md:tracking-wider text-emerald-900">
             <a href="#uvod" class="hover:text-emerald-600 transition">Úvod</a>
-            <a href="#program" class="hover:text-emerald-600 transition px-1">Info</a>
-            <a href="#doprava" class="hover:text-emerald-600 transition px-1">Doprava</a>
+            <a href="#info" class="hover:text-emerald-600 transition px-1">Info</a>
+            <a href="#foto" class="hover:text-emerald-600 transition px-1">Foto</a>
             <a href="#stravovani" class="hover:text-emerald-600 transition px-1">Stravování</a>
-            <a href="#dary" class="hover:text-emerald-600 transition">Dary</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
         </div>
     </nav>
@@ -133,50 +132,53 @@ new #[Layout('layouts.app')] class extends Component
     <!-- Obsah -->
     <main class="max-w-4xl mx-auto px-6 py-20 space-y-32">
 
-        <!-- Sekce Program & Mapy -->
-        <section id="program" class="scroll-mt-24">
-            <h2 class="text-4xl md:text-5xl text-center mb-16 text-emerald-900 font-extrabold uppercase tracking-tighter">Svatební harmonogram</h2>
+        <!-- Sekce INFO (Harmonogram, Dresscode, Doprava, Děti, Dary) -->
+        <div id="info" class="scroll-mt-24 space-y-32">
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Obřad -->
-                <div class="space-y-6">
-                    <div class="bg-white p-8 rounded-3xl shadow-xl border-t-4 border-emerald-700 relative overflow-hidden group">
-                         <div class="absolute -right-4 -top-4 text-7xl text-emerald-50/50 font-extrabold pointer-events-none z-0">11:30</div>
-                         <div class="relative z-10">
-                            <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">Svatební obřad</h3>
-                            <p class="text-lg font-bold text-amber-600/80 mb-4 tracking-wide">11:30 | Kostel sv. Matouše, Dolany</p>
-                            <div class="rounded-2xl overflow-hidden shadow-inner border border-stone-200">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2583.3731778201955!2d17.32173271246656!3d49.6472674713309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47124bdeafcaf7f7%3A0xd97c067f768d8edc!2sKostel%20sv.%20Matou%C5%A1e!5e0!3m2!1scs!2scz!4v1776713108103!5m2!1scs!2scz" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                         </div>
+            <!-- Sekce Program & Mapy -->
+            <section id="program">
+                <h2 class="text-4xl md:text-5xl text-center mb-16 text-emerald-900 font-extrabold uppercase tracking-tighter">Svatební harmonogram</h2>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Obřad -->
+                    <div class="space-y-6">
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-4 border-emerald-700 relative overflow-hidden group">
+                             <div class="absolute -right-4 -top-4 text-7xl text-emerald-50/50 font-extrabold pointer-events-none z-0">11:30</div>
+                             <div class="relative z-10">
+                                <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">Svatební obřad</h3>
+                                <p class="text-lg font-bold text-amber-600/80 mb-4 tracking-wide">11:30 | Kostel sv. Matouše, Dolany</p>
+                                <div class="rounded-2xl overflow-hidden shadow-inner border border-stone-200">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2583.3731778201955!2d17.32173271246656!3d49.6472674713309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47124bdeafcaf7f7%3A0xd97c067f768d8edc!2sKostel%20sv.%20Matou%C5%A1e!5e0!3m2!1scs!2scz!4v1776713108103!5m2!1scs!2scz" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Hostina -->
+                    <div class="space-y-6">
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-4 border-amber-500/50 relative overflow-hidden group">
+                             <div class="absolute -right-4 -top-4 text-7xl text-amber-50/50 font-extrabold pointer-events-none z-0">13:30</div>
+                             <div class="relative z-10">
+                                <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">Svatební hostina</h3>
+                                <div class="space-y-6 mb-6">
+                                    <div>
+                                        <h4 class="font-bold text-amber-600/80 tracking-wide uppercase text-sm mb-1">Svatební oběd (Rodina)</h4>
+                                        <p class="text-lg font-bold text-emerald-900 leading-tight">13:30 | Kulturní dům, Bohuňovice</p>
+                                        <p class="text-xs italic text-stone-500 mt-1">— čas je pouze orientační</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-emerald-700 tracking-wide uppercase text-sm mb-1">Svatební raut & Párty (Všichni)</h4>
+                                        <p class="text-lg font-bold text-emerald-900 leading-tight">16:30 | Kulturní dům, Bohuňovice</p>
+                                    </div>
+                                </div>
+                                <div class="rounded-2xl overflow-hidden shadow-inner border border-stone-200">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10331.464202313924!2d17.2873022!3d49.6568231!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471249aecde78acd%3A0x5478040c105fbf69!2zS3VsdHVybsOtIGTFr20gQm9odcWIb3ZpY2U!5e0!3m2!1scs!2scz!4v1776713013526!5m2!1scs!2scz" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                             </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Hostina -->
-                <div class="space-y-6">
-                    <div class="bg-white p-8 rounded-3xl shadow-xl border-t-4 border-amber-500/50 relative overflow-hidden group">
-                         <div class="absolute -right-4 -top-4 text-7xl text-amber-50/50 font-extrabold pointer-events-none z-0">13:30</div>
-                         <div class="relative z-10">
-                            <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">Svatební hostina</h3>
-                            <div class="space-y-6 mb-6">
-                                <div>
-                                    <h4 class="font-bold text-amber-600/80 tracking-wide uppercase text-sm mb-1">Svatební oběd (Rodina)</h4>
-                                    <p class="text-lg font-bold text-emerald-900 leading-tight">13:30 | Kulturní dům, Bohuňovice</p>
-                                    <p class="text-xs italic text-stone-500 mt-1">— čas je pouze orientační</p>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-emerald-700 tracking-wide uppercase text-sm mb-1">Svatební raut & Párty (Všichni)</h4>
-                                    <p class="text-lg font-bold text-emerald-900 leading-tight">16:30 | Kulturní dům, Bohuňovice</p>
-                                </div>
-                            </div>
-                            <div class="rounded-2xl overflow-hidden shadow-inner border border-stone-200">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10331.464202313924!2d17.2873022!3d49.6568231!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471249aecde78acd%3A0x5478040c105fbf69!2zS3VsdHVybsOtIGTFr20gQm9odcWIb3ZpY2U!5e0!3m2!1scs!2scz!4v1776713013526!5m2!1scs!2scz" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
         <!-- Dresscode s barevnou paletou -->
         <section id="dresscode" class="bg-emerald-900 p-10 md:p-16 rounded-[3rem] text-white shadow-2xl relative overflow-hidden">
@@ -291,6 +293,32 @@ new #[Layout('layouts.app')] class extends Component
         </section>
 
 
+        <!-- Sekce Fotogalerie -->
+        <section id="foto" class="scroll-mt-24">
+            <h2 class="text-4xl md:text-5xl text-center mb-16 text-emerald-900 font-extrabold uppercase tracking-tighter">Momentky z našeho života</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo1.jpg" alt="Foto 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo2.jpg" alt="Foto 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo3.jpg" alt="Foto 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo4.jpg" alt="Foto 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo5.jpg" alt="Foto 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl shadow-md group">
+                    <img src="/photos/photo6.jpg" alt="Foto 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+            </div>
+            <p class="text-center text-stone-400 text-xs mt-6 italic">Brzy přibudou i fotky ze svatby...</p>
+        </section>
+
         <!-- Sekce Stravování -->
         <section id="stravovani" class="scroll-mt-24">
             <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border-t-8 border-emerald-900">
@@ -356,7 +384,7 @@ new #[Layout('layouts.app')] class extends Component
         </section>
 
         <!-- Sekce Dary -->
-        <section id="dary" class="scroll-mt-24 text-center bg-white p-12 md:p-20 rounded-[3rem] border-2 border-dashed border-emerald-200 shadow-inner">
+        <section id="dary" class="text-center bg-white p-12 md:p-20 rounded-[3rem] border-2 border-dashed border-emerald-200 shadow-inner">
             <h2 class="text-4xl mb-10 text-emerald-900 font-extrabold uppercase">Svatební dary</h2>
             <div class="max-w-2xl mx-auto space-y-8">
                 <p class="text-xl leading-relaxed italic text-stone-700">
@@ -372,7 +400,9 @@ new #[Layout('layouts.app')] class extends Component
             </div>
         </section>
 
-        <!-- Kontakt & Potvrzení -->
+        </div> <!-- Konec sekce INFO -->
+
+        <!-- Kontakt & Potvrzení účasti -->
         <section id="kontakt" class="scroll-mt-24 text-center">
             <h2 class="text-4xl mb-12 text-emerald-900 font-extrabold uppercase">Potvrzení účasti</h2>
             <p class="text-lg mb-12 text-stone-600 max-w-lg mx-auto leading-relaxed">
