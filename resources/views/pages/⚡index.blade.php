@@ -26,24 +26,32 @@ new #[Layout('layouts.app')] class extends Component
             <a href="#program" class="hover:text-emerald-600 transition">Harmonogram</a>
             <a href="#doprava" class="hover:text-emerald-600 transition">Doprava</a>
             <a href="#dary" class="hover:text-emerald-600 transition">Dary</a>
+            <a href="#deti" class="hover:text-emerald-600 transition">Děti</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
         </div>
     </nav>
 
     <!-- Hero Sekce -->
-    <section id="uvod" class="relative h-screen flex items-center justify-center overflow-hidden pb-10">
+    <section id="uvod" class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="/hero-beer.jpg" alt="Svatba" class="w-full h-full object-cover brightness-[0.75]">
             <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-transparent to-transparent"></div>
         </div>
 
-        <div class="relative z-10 text-center px-4 -mt-32 md:-mt-40">
-            <h1 class="text-6xl md:text-8xl mb-4 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)] font-montserrat font-extrabold tracking-tight">
-                Ester <span class="text-amber-400 not-italic font-cormorant italic tracking-normal mx-2">&</span> Vítek
+        <div class="relative z-10 text-center px-4 -mt-24 md:-mt-32">
+            <p class="text-white text-xl md:text-2xl uppercase tracking-[0.4em] font-light mb-4 drop-shadow-lg">Svatba</p>
+            <h1 class="text-5xl md:text-8xl mb-8 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)] font-montserrat font-extrabold tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
+                <span>Ester</span>
+                <span class="relative inline-block">
+                    <span class="text-amber-400 not-italic font-cormorant italic tracking-normal">&</span>
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-amber-500/60 rounded-full shadow-sm"></span>
+                </span>
+                <span>Vítek</span>
             </h1>
-            <div class="w-24 h-1.5 bg-amber-500 mx-auto mb-8 rounded-full shadow-lg"></div>
-            <p class="text-2xl md:text-4xl text-white font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,1)] mb-2">15. srpna 2026</p>
-            <p class="text-lg md:text-2xl text-amber-100 font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,1)] italic">Dolany u Olomouce</p>
+            <div class="space-y-1">
+                <p class="text-xl md:text-3xl text-white font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">15. srpna 2026</p>
+                <p class="text-base md:text-xl text-amber-100 font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,1)] italic tracking-wide">Dolany u Olomouce</p>
+            </div>
         </div>
 
         <!-- Odpočítávadlo (Posunuto úplně dolů) -->
@@ -64,16 +72,16 @@ new #[Layout('layouts.app')] class extends Component
                     setInterval(update, 1000);
                 }
             }" class="flex justify-center gap-3 text-white max-w-sm mx-auto">
-                <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[70px] shadow-2xl">
-                    <span class="block text-2xl md:text-3xl font-black text-amber-400" x-text="d">00</span>
+                <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[75px] md:min-w-[85px] shadow-2xl">
+                    <span class="block text-3xl md:text-4xl font-black text-amber-400" x-text="d">00</span>
                     <span class="text-[9px] uppercase font-bold tracking-widest opacity-80">Dní</span>
                 </div>
-                <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[70px] shadow-2xl">
-                    <span class="block text-2xl md:text-3xl font-black text-amber-400" x-text="h">00</span>
+                <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[75px] md:min-w-[85px] shadow-2xl">
+                    <span class="block text-3xl md:text-4xl font-black text-amber-400" x-text="h">00</span>
                     <span class="text-[9px] uppercase font-bold tracking-widest opacity-80">Hodin</span>
                 </div>
-                <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[70px] shadow-2xl">
-                    <span class="block text-2xl md:text-3xl font-black text-amber-400" x-text="m">00</span>
+                <div class="bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10 min-w-[75px] md:min-w-[85px] shadow-2xl">
+                    <span class="block text-3xl md:text-4xl font-black text-amber-400" x-text="m">00</span>
                     <span class="text-[9px] uppercase font-bold tracking-widest opacity-80">Minut</span>
                 </div>
             </div>
@@ -94,9 +102,9 @@ new #[Layout('layouts.app')] class extends Component
                          <div class="absolute -right-4 -top-4 text-7xl text-emerald-50/50 font-extrabold pointer-events-none z-0">11:30</div>
                          <div class="relative z-10">
                             <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">Svatební obřad</h3>
-                            <p class="font-bold text-amber-700 mb-4 tracking-wide">11:30 | Kostel sv. Matouše, Dolany</p>
+                            <p class="text-lg font-bold text-amber-700 mb-4 tracking-wide">11:30 | Kostel sv. Matouše, Dolany</p>
                             <div class="rounded-2xl overflow-hidden shadow-inner border border-stone-200">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2583.94!2d17.3218!3d49.6371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712537f8f700001%3A0xc6c4f9a0d1e3d43d!2zS29zdGVsIHN2LiBNYXRvdZFl!5e0!3m2!1scs!2scz!4v1713554400000" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2583.3731778201955!2d17.32173271246656!3d49.6472674713309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47124bdeafcaf7f7%3A0xd97c067f768d8edc!2sKostel%20sv.%20Matou%C5%A1e!5e0!3m2!1scs!2scz!4v1776713108103!5m2!1scs!2scz" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                          </div>
                     </div>
@@ -104,22 +112,22 @@ new #[Layout('layouts.app')] class extends Component
 
                 <!-- Hostina -->
                 <div class="space-y-6">
-                    <div class="bg-white p-8 rounded-3xl shadow-xl border-t-4 border-amber-600 relative overflow-hidden group">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border-t-4 border-amber-500/50 relative overflow-hidden group">
                          <div class="absolute -right-4 -top-4 text-7xl text-amber-50/50 font-extrabold pointer-events-none z-0">13:30</div>
                          <div class="relative z-10">
                             <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">Svatební hostina</h3>
                             <div class="space-y-4 mb-6">
                                 <div>
-                                    <p class="font-bold text-amber-700 tracking-wide uppercase text-xs">Oběd (Rodina)</p>
+                                    <p class="font-bold text-amber-700 tracking-wide uppercase text-xs mb-1">Svatební oběd (Rodina) <span class="normal-case italic font-normal text-stone-500 ml-1">— čas je orientační</span></p>
                                     <p class="text-lg font-bold">13:30 | Kulturní dům, Bohuňovice</p>
                                 </div>
                                 <div>
-                                    <p class="font-bold text-emerald-700 tracking-wide uppercase text-xs">Svatební raut & Párty (Všichni)</p>
-                                    <p class="text-lg font-bold text-emerald-900">od 16:30 | Bohuňovice</p>
+                                    <p class="font-bold text-emerald-700 tracking-wide uppercase text-xs mb-1">Svatební raut & Párty (Všichni)</p>
+                                    <p class="text-lg font-bold text-emerald-900">16:30 | Bohuňovice</p>
                                 </div>
                             </div>
                             <div class="rounded-2xl overflow-hidden shadow-inner border border-stone-200">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.65!2d17.2825!3d49.6601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47125470d24f0001%3A0xb6c7d9760086c91a!2zS3VsdHVybsOtIGTFrW0gQm9odcWIb3ZpY2U!5e0!3m2!1scs!2scz!4v1713554500000" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10331.464202313924!2d17.2873022!3d49.6568231!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471249aecde78acd%3A0x5478040c105fbf69!2zS3VsdHVybsOtIGTFr20gQm9odcWIb3ZpY2U!5e0!3m2!1scs!2scz!4v1776713013526!5m2!1scs!2scz" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                          </div>
                     </div>
@@ -132,7 +140,7 @@ new #[Layout('layouts.app')] class extends Component
             <div class="absolute top-0 right-0 w-32 h-32 bg-amber-400 opacity-10 rounded-full -mr-16 -mt-16"></div>
             <h2 class="text-4xl font-black mb-8 uppercase italic">Dresscode</h2>
             <p class="text-xl leading-relaxed mb-10 text-emerald-50">
-                Svatba bude laděná do <span class="text-amber-400 font-bold">pivních barev</span>. Pokud hledáte inspiraci, doporučujeme elegantní módní kousky v odstínech pivní palety:
+                Svatba bude laděná do <span class="text-amber-400 font-bold">pivních barev</span>. Pokud hledáte inspiraci, doporučujeme formální módní kousky v odstínech pivní palety:
             </p>
 
             <div class="flex flex-wrap gap-6 mb-10">
@@ -145,16 +153,16 @@ new #[Layout('layouts.app')] class extends Component
                     <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Ležák</span>
                 </div>
                 <div class="flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#BA8E23]"></div>
+                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Zlaté</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
                     <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#9B5211]"></div>
                     <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Jantar</span>
                 </div>
                 <div class="flex flex-col items-center gap-2">
                     <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#5C2F00]"></div>
                     <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Tmavé</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#FFFDF5]"></div>
-                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Pěna</span>
                 </div>
             </div>
 
@@ -178,7 +186,7 @@ new #[Layout('layouts.app')] class extends Component
                         </div>
                         <div>
                             <h4 class="font-bold text-emerald-800 uppercase text-xs mb-2">Veřejnou dopravou</h4>
-                            <p class="text-sm">Vlakem do Olomouce, poté autobusem do Dolan. Pokud potřebujete pomoci s dopravou z Olomouce do Dolan, kontaktujte s předstihem ženicha.</p>
+                            <p class="text-sm">Vlakem do Olomouce, poté autobusem do Dolan. Pokud potřebujete pomoci s dopravou z Olomouce do Dolan, kontaktujte s předstihem ženicha, který se pokusí dopravu zařídit.</p>
                         </div>
                         <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 italic">
                             <h4 class="font-bold text-amber-800 uppercase text-[10px] mb-1">Přesun na hostinu</h4>
@@ -188,20 +196,20 @@ new #[Layout('layouts.app')] class extends Component
                 </div>
 
                 <!-- Ubytování -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-amber-600">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-amber-500/50">
                     <h3 class="text-xl font-black text-emerald-900 mb-6 uppercase italic">Kde složit hlavu?</h3>
                     <div class="space-y-6 text-stone-600">
-                        <p class="text-sm">Ubytování je k dispozici ve vybavených pokojích farního Domu v Dolanech (Komunita Blahoslavenství).</p>
+                        <p class="text-sm">Ubytování je k dispozici zdarma (či za dobrovolný příspěvek) ve vybavených pokojích farního Domu v Dolanech (Komunita Blahoslavenství).</p>
                         <p class="text-sm font-bold bg-stone-50 p-4 rounded-xl border border-stone-200">
                             Kapacita je omezená (systém "kdo dřív přijde,..."), dejte prosím vědět ženichovi co nejdříve kvůli rezervaci.
                         </p>
-                        <p class="text-sm">Po vyčerpání kapacity bude případně domluvena možnost přespání ve vlastním stanu na zahradě fary v Dolanech, případně lze po vlastní ose v hotelech/airbnb v Olomouci.</p>
+                        <p class="text-sm leading-relaxed">Po vyčerpání kapacity bude případně domluvena možnost přespání ve vlastním stanu na zahradě fary v Dolanech, případně lze po vlastní ose v hotelech/airbnb v Olomouci.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Noční rozvoz -->
-            <div class="bg-stone-900 text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center gap-8 border-b-4 border-amber-500">
+            <div class="bg-stone-900 text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center gap-8 border-b-4 border-amber-500/50">
                 <div class="text-5xl">🚗</div>
                 <div>
                     <h3 class="text-xl font-black mb-2 uppercase italic text-amber-400">Večerní odvoz zajištěn</h3>
@@ -212,19 +220,46 @@ new #[Layout('layouts.app')] class extends Component
             </div>
         </section>
 
+        <!-- Sekce Děti -->
+        <section id="deti" class="scroll-mt-24 bg-white p-10 md:p-16 rounded-[3rem] shadow-lg border-t-8 border-amber-500/30">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="text-7xl">🧸</div>
+                <div class="flex-1">
+                    <h2 class="text-4xl font-black mb-6 text-emerald-900 uppercase italic">Děti na svatbě</h2>
+                    <p class="text-lg text-stone-600 leading-relaxed mb-6">
+                        Naše svatba bude <span class="text-emerald-700 font-bold italic">baby friendly</span>. Chceme, aby si den užili i ti nejmenší, proto bude v sále zajištěn dětský koutek.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
+                            <h4 class="font-bold text-emerald-800 uppercase text-xs mb-3 flex items-center gap-2">
+                                <span>🎨</span> Dětský koutek
+                            </h4>
+                            <p class="text-sm text-stone-500">K dispozici bude podložka na hraní, hračky a knížky pro děti.</p>
+                        </div>
+                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
+                            <h4 class="font-bold text-emerald-800 uppercase text-xs mb-3 flex items-center gap-2">
+                                <span>🍼</span> Zázemí pro rodiče
+                            </h4>
+                            <p class="text-sm text-stone-500">Pro vaše pohodlí je v místě konání k dispozici také přebalovací pult.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sekce Dary -->
         <section id="dary" class="scroll-mt-24 text-center bg-white p-12 md:p-20 rounded-[3rem] border-2 border-dashed border-emerald-200 shadow-inner">
             <h2 class="text-4xl mb-10 text-emerald-900 font-extrabold uppercase">Svatební dary</h2>
             <div class="max-w-2xl mx-auto space-y-8">
                 <p class="text-xl leading-relaxed italic text-stone-700">
-                    Dobrosrdečnosti se meze nekladou, avšak nejraději budeme za dary ve formě aktiv s vysokou likviditou (tj. snadno přeměnitelné na peníze).
+                    Dobrosrdečnosti se meze nekladou, avšak nejraději budeme za dary ve formě aktiv s vysokou likviditou (tj. snadno přeměnitelných na peníze).
                 </p>
                 <div class="h-px w-20 bg-amber-400 mx-auto"></div>
                 <p class="text-stone-600 leading-relaxed text-sm">
                     Kromě finančních prostředků ve formě peněz s tzv. nuceným oběhem (např. hotovost či pohledávky za bankami) přijmeme s vděkem i kryptoměny či investiční aktiva, jako jsou dluhopisy, směnky, majetkové cenné papíry apod. V aktuálním prostředí geopolitické nejistoty mohou být vhodné i kontrakty ke komoditám, ať už půjde o drahé kovy, ropu či zemědělské komodity s vyšší importní náročností. Zkrátka darovat nám můžete to, co znáte a čemu věříte.
                 </p>
                 <p class="text-emerald-900 font-bold italic">
-                    Prostředky využijeme k založení společného jmění manželů a na svatební cestu do New Yorku. 🗽
+                    Prostředky využijeme k založení společného jmění manželů, případně na svatební cestu do New Yorku. 🗽
                 </p>
             </div>
         </section>
@@ -233,19 +268,14 @@ new #[Layout('layouts.app')] class extends Component
         <section id="kontakt" class="scroll-mt-24 text-center">
             <h2 class="text-4xl mb-12 text-emerald-900 font-extrabold uppercase">Potvrzení účasti</h2>
             <p class="text-lg mb-12 text-stone-600 max-w-lg mx-auto leading-relaxed">
-                Dejte nám prosím vědět, zda dorazíte. Kontaktujte nás na WhatsAppu nebo telefonicky na číslech níže.
+                Dejte nám prosím vědět, zda dorazíte. Kontaktujte ženicha na WhatsAppu nebo telefonicky na čísle níže.
             </p>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <a href="tel:+420731626020" class="group bg-white p-8 rounded-3xl shadow-lg border border-emerald-100 hover:border-emerald-500 transition-all duration-300">
+            <div class="max-w-md mx-auto">
+                <a href="tel:+420731626020" class="group block bg-white p-8 rounded-3xl shadow-lg border border-emerald-100 hover:border-emerald-500 transition-all duration-300">
                     <span class="block text-emerald-600 font-bold uppercase tracking-[0.2em] text-xs mb-4">Ženich</span>
                     <h4 class="text-3xl font-black text-emerald-900 group-hover:text-emerald-600 transition-colors">Vítek</h4>
                     <p class="text-stone-500 font-mono mt-2">+420 731 626 020</p>
-                </a>
-                <a href="tel:+420730180967" class="group bg-white p-8 rounded-3xl shadow-lg border border-emerald-100 hover:border-emerald-500 transition-all duration-300">
-                    <span class="block text-emerald-600 font-bold uppercase tracking-[0.2em] text-xs mb-4">Nevěsta</span>
-                    <h4 class="text-3xl font-black text-emerald-900 group-hover:text-emerald-600 transition-colors">Ester</h4>
-                    <p class="text-stone-500 font-mono mt-2">+420 730 180 967</p>
                 </a>
             </div>
         </section>
