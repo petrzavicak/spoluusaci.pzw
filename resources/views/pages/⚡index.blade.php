@@ -58,11 +58,11 @@ new #[Layout('layouts.app')] class extends Component
 <div class="bg-stone-50 text-stone-900 min-h-screen font-sans selection:bg-emerald-700 selection:text-white">
     <!-- Moderní Plovoucí Navigace (Styl z verze 2) -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-md">
-        <div class="bg-white/80 backdrop-blur-lg border border-emerald-900/10 shadow-lg rounded-full px-6 py-3 flex justify-around text-[10px] md:text-xs font-bold uppercase tracking-wider text-emerald-900">
+        <div class="bg-white/80 backdrop-blur-lg border border-emerald-900/10 shadow-lg rounded-full px-6 py-3 flex justify-around text-[9px] md:text-xs font-bold uppercase tracking-tighter md:tracking-wider text-emerald-900">
             <a href="#uvod" class="hover:text-emerald-600 transition">Úvod</a>
             <a href="#program" class="hover:text-emerald-600 transition">Harmonogram</a>
-            <a href="#doprava" class="hover:text-emerald-600 transition">Doprava</a>
-            <a href="#stravovani" class="hover:text-emerald-600 transition">Stravování</a>
+            <a href="#doprava" class="hover:text-emerald-600 transition px-1">Info</a>
+            <a href="#stravovani" class="hover:text-emerald-600 transition px-1">Menu</a>
             <a href="#dary" class="hover:text-emerald-600 transition">Dary</a>
             <a href="#deti" class="hover:text-emerald-600 transition">Děti</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
@@ -243,7 +243,7 @@ new #[Layout('layouts.app')] class extends Component
                         <p class="text-sm font-bold bg-stone-50 p-4 rounded-xl border border-stone-200">
                             Kapacita je omezená, kvůli rezervaci se nám prosím nahlaste do 31. 5.
                         </p>
-                        <p class="text-sm leading-relaxed">Jde o systém "kdo dřív přijde,...", v případě vyčerpání kapacity se domluvíme individuálně, případně lze po vlastní ose využít hotely/airbinb v Olomouci.</p>
+                        <p class="text-sm leading-relaxed">Jde o systém "kdo dřív přijde,...", v případě vyčerpání kapacity se domluvíme individuálně, případně lze po vlastní ose využít hotely/airbnb v Olomouci.</p>
                     </div>
                 </div>
             </div>
@@ -296,10 +296,10 @@ new #[Layout('layouts.app')] class extends Component
                 </p>
 
                 @if($form_submitted)
-                    <div class="bg-emerald-50 border-2 border-emerald-200 p-8 rounded-3xl text-center animate-bounce">
+                    <div class="bg-emerald-50 border-2 border-emerald-200 p-8 rounded-3xl text-center" x-data="{}" x-init="setTimeout(() => { $el.classList.add('animate-[bounce_0.5s_ease-in-out_2]') }, 100)">
                         <span class="text-4xl mb-4 block">✅</span>
                         <h3 class="text-2xl font-bold text-emerald-900 mb-2">Děkujeme!</h3>
-                        <p class="text-emerald-700 font-medium">Informace byly úspěšně odeslány ženichovi.</p>
+                        <p class="text-emerald-700 font-medium">Informace byly úspěšně odeslány novomanželům.</p>
                         <button wire:click="$set('form_submitted', false)" class="mt-6 text-emerald-600 font-bold uppercase text-xs hover:underline">Poslat další</button>
                     </div>
                 @else
