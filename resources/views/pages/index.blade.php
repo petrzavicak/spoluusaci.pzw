@@ -180,42 +180,6 @@ new #[Layout('layouts.app')] class extends Component
                 </div>
             </section>
 
-        <!-- Dresscode s barevnou paletou -->
-        <section id="dresscode" class="bg-emerald-900 p-10 md:p-16 rounded-[3rem] text-white shadow-2xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-400 opacity-10 rounded-full -mr-16 -mt-16"></div>
-            <h2 class="text-4xl font-black mb-8 uppercase italic">Dresscode</h2>
-            <p class="text-xl leading-relaxed mb-10 text-emerald-50">
-                Máme rádi pivo a ještě radši na něj chodíme společně. Svatbu jsme se proto rozhodli ladit do <span class="text-amber-400 font-bold">pivních barev</span>. Pokud hledáte inspiraci, doporučujeme formální módní kousky v odstínech pivní palety:
-            </p>
-
-            <div class="flex flex-wrap gap-6 mb-10">
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#F2C14E]"></div>
-                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Světlé</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#D48F1A]"></div>
-                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Ležák</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#BA8E23]"></div>
-                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Zlaté</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#9B5211]"></div>
-                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Jantar</span>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#5C2F00]"></div>
-                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Tmavé</span>
-                </div>
-            </div>
-
-            <p class="italic text-emerald-200 border-l-2 border-amber-400 pl-6">
-                Je to však zcela dobrovolné – nejdůležitější je, abyste se cítili elegantně a pohodlně.
-            </p>
-        </section>
-
         <!-- Doprava a Ubytování -->
         <section id="doprava" class="scroll-mt-24 space-y-12">
             <h2 class="text-4xl md:text-5xl text-center mb-16 text-emerald-900 font-extrabold uppercase tracking-tighter">Doprava & Ubytování</h2>
@@ -259,10 +223,46 @@ new #[Layout('layouts.app')] class extends Component
                 <div>
                     <h3 class="text-xl font-black mb-2 uppercase italic text-amber-600/80">Večerní odvoz zajištěn</h3>
                     <p class="text-stone-300 leading-relaxed">
-                        Nebojte se pořádně oslavovat. Večer i v noci budou k dispozici řidiči, kteří vás odvezou do Olomouce a okolí. Kontakt na ně bude k dispozici přímo na místě.
+                        Nebojte se pořádně oslavovat. Večer i v noci budou k dispozici řidiči, kteří vás odvezou do Olomouce a okolí. Kontakt na nem bude k dispozici přímo na místě.
                     </p>
                 </div>
             </div>
+        </section>
+
+        <!-- Dresscode s barevnou paletou -->
+        <section id="dresscode" class="bg-emerald-900 p-10 md:p-16 rounded-[3rem] text-white shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-400 opacity-10 rounded-full -mr-16 -mt-16"></div>
+            <h2 class="text-4xl font-black mb-8 uppercase italic">Dresscode</h2>
+            <p class="text-xl leading-relaxed mb-10 text-emerald-50">
+                Máme rádi pivo a ještě radši na něj chodíme společně. Svatbu jsme se proto rozhodli ladit do <span class="text-amber-400 font-bold">pivních barev</span>. Pokud hledáte inspiraci, doporučujeme formální módní kousky v odstínech pivní palety:
+            </p>
+
+            <div class="flex flex-wrap gap-6 mb-10">
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#F2C14E]"></div>
+                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Světlé</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#D48F1A]"></div>
+                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Ležák</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#BA8E23]"></div>
+                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Zlaté</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#9B5211]"></div>
+                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Jantar</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white/20 bg-[#5C2F00]"></div>
+                    <span class="text-[10px] font-bold uppercase tracking-tighter opacity-70">Tmavé</span>
+                </div>
+            </div>
+
+            <p class="italic text-emerald-200 border-l-2 border-amber-400 pl-6">
+                Je to však zcela dobrovolné – nejdůležitější je, abyste se cítili elegantně a pohodlně.
+            </p>
         </section>
 
         <!-- Sekce Děti -->
