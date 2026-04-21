@@ -63,8 +63,9 @@ new #[Layout('layouts.app')] class extends Component
             <a href="#dary" class="hover:text-emerald-600 transition px-1">贈り物 (Gifts)</a>
             <a href="#foto" class="hover:text-emerald-600 transition px-1">写真 (Photo)</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">連絡先 (Contact)</a>
+            <a href="/" class="text-emerald-600 hover:text-emerald-700 transition font-black">CZ</a>
             <div class="h-4 w-px bg-emerald-900/20 mx-1"></div>
-            <a href="/" class="text-amber-600 hover:text-amber-700 transition font-black">CZ</a>
+            <span class="text-red-600 font-black">JP</span>
         </div>
     </nav>
 
@@ -76,14 +77,14 @@ new #[Layout('layouts.app')] class extends Component
         </div>
 
         <div class="relative z-10 text-center px-4 -mt-40 md:-mt-48">
-            <p class="text-white text-xl md:text-2xl uppercase tracking-[0.4em] font-light mb-4 drop-shadow-lg font-playfair">Wedding</p>
+            <p class="text-white text-xl md:text-2xl mb-4 drop-shadow-lg font-playfair tracking-tight">Wedding</p>
             <h1 class="text-5xl md:text-8xl mb-12 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)] font-playfair font-extrabold tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
                 <span>Ester</span>
                 <span class="relative inline-block">
                     <span class="text-amber-500/80 not-italic font-cormorant italic tracking-normal">&</span>
                     <span class="absolute -bottom-2 left-0 w-full h-1 bg-amber-500/50 rounded-full shadow-sm"></span>
                 </span>
-                <span>Vítek</span>
+                <span>Vít</span>
             </h1>
         </div>
 
@@ -159,12 +160,12 @@ new #[Layout('layouts.app')] class extends Component
                                 <h3 class="text-2xl font-black text-emerald-900 mb-2 uppercase italic">披露宴 & パーティー</h3>
                                 <div class="space-y-6 mb-6">
                                     <div>
-                                        <h4 class="font-bold text-amber-600/80 tracking-wide uppercase text-sm mb-1">ウェディングランチ (親族)</h4>
+                                        <h4 class="font-bold text-amber-600/80 tracking-wide uppercase text-sm mb-1">ウェディングランチ</h4>
                                         <p class="text-lg font-bold text-emerald-900 leading-tight">13:30 | ボフニョヴィツェ文化会館</p>
-                                        <p class="text-xs italic text-stone-500 mt-1">— 時間は目安です</p>
+                                        <p class="text-xs italic text-stone-500 mt-1">時間は目安です</p>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-emerald-700 tracking-wide uppercase text-sm mb-1">パーティー (ゲスト全員)</h4>
+                                        <h4 class="font-bold text-emerald-700 tracking-wide uppercase text-sm mb-1">パーティー</h4>
                                         <p class="text-lg font-bold text-emerald-900 leading-tight">16:30 | ボフニョヴィツェ文化会館</p>
                                     </div>
                                 </div>
@@ -205,7 +206,7 @@ new #[Layout('layouts.app')] class extends Component
                     <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-amber-500/50">
                         <h3 class="text-xl font-black text-emerald-900 mb-6 uppercase italic">宿泊のおすすめ</h3>
                         <div class="space-y-6 text-stone-600 text-sm leading-relaxed">
-                            <p>日本からの皆様には、挙式会場近くの小さなペンションよりも、近隣の<b>オロモウツ（Olomouc）市内</b>のホテルをお勧めしています。</p>
+                            <p>日本からの皆様には、近隣のオロモウツ（Olomouc）市内のホテルをお勧めしています。</p>
                             <p>オロモウツは世界遺産の「聖三位一体柱」がある歴史的な美しい街で、英語が通じるホテルも多く快適に滞在いただけます。観光も兼ねてぜひお楽しみください。</p>
                             <p class="font-bold bg-stone-50 p-4 rounded-xl border border-stone-200">
                                 夜の披露宴終了後には、オロモウツ市内のホテルまで無料のシャトル車を用意しております。
@@ -377,13 +378,13 @@ new #[Layout('layouts.app')] class extends Component
         <section id="kontakt" class="scroll-mt-24 text-center">
             <h2 class="text-4xl mb-12 text-emerald-900 font-extrabold uppercase">お問い合わせ (RSVP)</h2>
             <p class="text-lg mb-12 text-stone-600 max-w-lg mx-auto leading-relaxed">
-                ご不明な点やご欠席のご連絡は、新郎のヴィーテク（Vítek）まで、WhatsAppまたは直接お電話にてご連絡ください。
+                ご不明な点やご欠席のご連絡は、新郎のヴィートまで、WhatsAppまたは直接お電話にてご連絡ください。
             </p>
 
             <div class="max-w-md mx-auto">
                 <div class="group block bg-white p-8 rounded-3xl shadow-lg border border-emerald-100 transition-all duration-300">
                     <span class="block text-emerald-600 font-bold uppercase tracking-[0.2em] text-xs mb-4">Groom (新郎)</span>
-                    <h4 class="text-3xl font-black text-emerald-900 transition-colors">Vítek (ヴィーテク)</h4>
+                    <h4 class="text-3xl font-black text-emerald-900 transition-colors">ヴィート</h4>
                     <p class="text-stone-500 font-mono mt-2">+420 731 626 020</p>
                     <p class="text-xs text-stone-400 mt-4 italic font-sans uppercase">WhatsApp Available</p>
                 </div>
@@ -399,7 +400,7 @@ new #[Layout('layouts.app')] class extends Component
             <span>💍</span>
             <span>🗽</span>
         </div>
-        <p class="font-bold uppercase tracking-[0.3em] text-[10px] font-playfair">&copy; 2026 Ester & Vítek</p>
+        <p class="font-bold uppercase tracking-[0.3em] text-[10px] font-playfair">&copy; 2026 ESTER & VÍT</p>
         <div class="mt-4 h-1 w-12 bg-emerald-700 mx-auto rounded-full"></div>
     </footer>
 </div>

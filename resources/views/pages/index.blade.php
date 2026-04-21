@@ -69,7 +69,7 @@ new #[Layout('layouts.app')] class extends Component
             <a href="#foto" class="hover:text-emerald-600 transition px-1">Foto</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
             <div class="h-4 w-px bg-emerald-900/20 mx-1"></div>
-            <a href="/jp" class="text-emerald-600 hover:text-emerald-700 transition font-black">JP</a>
+            <a href="/jp" class="text-red-600 hover:text-red-700 transition font-black">JP</a>
         </div>
     </nav>
 
