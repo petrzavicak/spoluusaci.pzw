@@ -259,7 +259,7 @@ new #[Layout('layouts.app')] class extends Component
                     <div class="flex-1">
                         <h2 class="text-4xl font-black mb-6 text-emerald-900 uppercase italic">お子様連れのゲストへ</h2>
                         <p class="text-lg text-stone-600 leading-relaxed mb-6">
-                            私たちの結婚式は、お子様も大歓迎の「<span class="text-emerald-700 italic">baby friendly</span>」な一日です。披露宴会場にはキッズコーナーを用意しております。
+                            私たちの結婚式は、お子様も歓迎の「<span class="text-emerald-700 italic">baby friendly</span>」な一日です。披露宴会場にはキッズコーナーを用意しております。
                         </p>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
