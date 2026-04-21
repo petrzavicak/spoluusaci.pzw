@@ -42,12 +42,19 @@ new #[Layout('layouts.app')] class extends Component
 
         try {
             \Illuminate\Support\Facades\Mail::raw($zprava, function($message) {
-                $message->to('mikusekvitek@seznam.cz')
+                $message->from('mikusekvitek@seznam.cz', 'Svatba Ester & Vít')
+                        ->to('mikusekvitek@seznam.cz')
                         ->subject('Nové stravovací omezení (JP) - Svatba');
             });
             $this->form_submitted = true;
         } catch (\Exception $e) {
-            \Illuminate\Support\Facades\Log::error('Error sending JP wedding email: ' . $e->getMessage());
+            \Illuminate\Support\Facades\Log::error('Error sending JP wedding email: ' . $e->getMessage(), [
+                'exception' => $e,
+                'data' => [
+                    'sender' => $this->sender_name,
+                    'guests' => $this->guests
+                ]
+            ]);
             $this->mail_error = true;
         }
     }

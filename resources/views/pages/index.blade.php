@@ -38,12 +38,19 @@ new #[Layout('layouts.app')] class extends Component
 
         try {
             \Illuminate\Support\Facades\Mail::raw($zprava, function($message) {
-                $message->to('mikusekvitek@seznam.cz')
+                $message->from('mikusekvitek@seznam.cz', config('app.name'))
+                        ->to('mikusekvitek@seznam.cz')
                         ->subject('Nové stravovací omezení - Svatba');
             });
             $this->form_submitted = true;
         } catch (\Exception $e) {
-            \Illuminate\Support\Facades\Log::error('Chyba při odesílání svatebního e-mailu: ' . $e->getMessage());
+            \Illuminate\Support\Facades\Log::error('Chyba při odesílání svatebního e-mailu: ' . $e->getMessage(), [
+                'exception' => $e,
+                'data' => [
+                    'sender' => $this->sender_name,
+                    'guests' => $this->guests
+                ]
+            ]);
             $this->mail_error = true;
         }
     }
