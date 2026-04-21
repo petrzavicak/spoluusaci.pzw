@@ -360,7 +360,7 @@ new #[Layout('layouts.app')] class extends Component
         </section>
 
         <!-- Sekce Dary -->
-        <section id="dary" class="text-center bg-white p-12 md:p-20 rounded-[3rem] border-2 border-dashed border-emerald-200 shadow-inner scroll-mt-24">
+        <section id="dary" class="text-center bg-white p-12 md:p-20 rounded-[3rem] shadow-lg border-t-8 border-amber-500/30 scroll-mt-24">
             <h2 class="text-4xl mb-10 text-emerald-900 font-extrabold uppercase">Svatební dary</h2>
             <div class="max-w-2xl mx-auto space-y-8">
                 <p class="text-xl leading-relaxed italic text-stone-700">
