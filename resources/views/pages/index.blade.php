@@ -61,13 +61,15 @@ new #[Layout('layouts.app')] class extends Component
 
 <div class="bg-stone-50 text-stone-900 min-h-screen font-sans selection:bg-emerald-700 selection:text-white">
     <!-- Moderní Plovoucí Navigace (Styl z verze 2) -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-md">
-        <div class="bg-white/80 backdrop-blur-lg border border-emerald-900/10 shadow-lg rounded-full px-6 py-3 flex justify-around text-[9px] md:text-xs font-bold uppercase tracking-tighter md:tracking-wider text-emerald-900">
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-lg">
+        <div class="bg-white/80 backdrop-blur-lg border border-emerald-900/10 shadow-lg rounded-full px-6 py-3 flex justify-around items-center text-[9px] md:text-xs font-bold uppercase tracking-tighter md:tracking-wider text-emerald-900">
             <a href="#info" class="hover:text-emerald-600 transition px-1">Info</a>
             <a href="#stravovani" class="hover:text-emerald-600 transition px-1">Stravování</a>
             <a href="#dary" class="hover:text-emerald-600 transition px-1">Dary</a>
             <a href="#foto" class="hover:text-emerald-600 transition px-1">Foto</a>
             <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
+            <div class="h-4 w-px bg-emerald-900/20 mx-1"></div>
+            <a href="/jp" class="text-emerald-600 hover:text-emerald-700 transition font-black">JP</a>
         </div>
     </nav>
 
