@@ -37,9 +37,13 @@ new #[Layout('layouts.app')] class extends Component
         }
 
         try {
-            \Illuminate\Support\Facades\Mail::raw($zprava, function($message) {
-                $message->from('mikusekvitek@seznam.cz', config('app.name'))
+            $fromAddress = config('mail.from.address');
+            $fromName = config('mail.from.name');
+
+            \Illuminate\Support\Facades\Mail::raw($zprava, function($message) use ($fromAddress, $fromName) {
+                $message->from($fromAddress, $fromName)
                         ->to('mikusekvitek@seznam.cz')
+                        ->replyTo($fromAddress)
                         ->subject('Nové stravovací omezení - Svatba');
             });
             $this->form_submitted = true;
