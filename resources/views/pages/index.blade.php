@@ -236,7 +236,7 @@ new #[Layout('layouts.app')] class extends Component
                 <div>
                     <h3 class="text-xl font-black mb-2 uppercase italic text-amber-600/80">Večerní odvoz zajištěn</h3>
                     <p class="text-stone-300 leading-relaxed">
-                        Nebojte se pořádně oslavovat. Večer i v noci budou k dispozici řidiči, kteří vás odvezou do Olomouce a okolí. Kontakt na nem bude k dispozici přímo na místě.
+                        Nebojte se pořádně oslavovat. Večer i v noci budou k dispozici řidiči, kteří vás odvezou do Olomouce a okolí. Kontakt bude k dispozici přímo na místě.
                     </p>
                 </div>
             </div>
